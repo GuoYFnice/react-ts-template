@@ -14,9 +14,7 @@ const getCssLoaders = importLoaders => [
   {
     loader: 'css-loader',
     options: {
-      modules: {
-        localIdentName: '[path][name]__[local]--[hash:base64:5]'
-      },
+      modules: true,
       sourceMap: isDev,
       importLoaders
     }
@@ -77,7 +75,24 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: getCssLoaders(1)
+        use: getCssLoaders(1),
+        // * 排除 node_modules 避开 antd.
+        exclude: /node_modules/
+      },
+      // * 单独处理 antd 样式，避免模块化影响。
+      {
+        test: /\.css$/,
+        use: [
+          { loader: 'style-loader' },
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: isDev,
+              importLoaders: 1
+            }
+          }
+        ],
+        exclude: /src/
       },
       {
         test: /\.less$/,
@@ -97,12 +112,6 @@ module.exports = {
           ...getCssLoaders(2),
           {
             loader: 'sass-loader',
-            // loader: [
-            //   'style',
-            //   'css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]',
-            //   'resolve-url',
-            //   'sass'
-            // ],
             options: {
               sourceMap: isDev
             }

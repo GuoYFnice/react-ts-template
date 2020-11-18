@@ -16,10 +16,10 @@ const LeftSidebar = () => {
     window.sessionStorage.setItem('activeTab', keys.length > 1 ? keys[1] : keys[0]);
     // * 当前点击的一级菜单。
     const latestOpenKey = keys.find(key => expandKeys.includes(key));
-    if (rootSubmenuKeys.includes(latestOpenKey)) {
+    if (!rootSubmenuKeys.includes(latestOpenKey)) {
       setExpandKeys(keys);
     } else {
-      setExpandKeys((keys = latestOpenKey ? [latestOpenKey] : []));
+      setExpandKeys(latestOpenKey ? [latestOpenKey] : []);
     }
   };
   // ? 保存点击的二级菜单到 sessionStorage 的方法。
