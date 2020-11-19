@@ -17,11 +17,11 @@ export const hookSubmenuList = [
       {
         name: 'InputBind',
         path: '/BindElement/InputBind'
+      },
+      {
+        name: 'CheckboxBind',
+        path: '/BindElement/CheckboxBind'
       }
-      // {
-      //   name: 'CheckboxBind',
-      //   path: '/BindElement/CheckboxBind'
-      // },
       // {
       //   name: 'TextSelectionBind',
       //   path: '/BindElement/TextSelectionBind'

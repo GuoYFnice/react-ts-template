@@ -4,7 +4,7 @@ import LeftSidebar from 'Layouts/LeftSideBar/index';
 import { routes } from 'Routes/index';
 import styles from './index.module.scss';
 
-const ComponentsDisplay = () => {
+const ComponentsDisplay: React.FunctionComponent = (): JSX.Element => {
   return (
     <div className={styles.App}>
       <Router>

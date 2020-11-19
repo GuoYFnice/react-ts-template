@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu } from 'antd';
-import { rootSubmenuKeys, hookSubmenuList } from 'Routes/RouteConfig/index';
+import { rootSubmenuKeys, hookSubmenuList } from 'Routes/RouteConfig';
 import styles from './index.module.scss';
 
 const { SubMenu } = Menu;
 
-const LeftSidebar = () => {
+const LeftSidebar: React.FunctionComponent = (): JSX.Element => {
   const [expandKeys, setExpandKeys] = useState([window.sessionStorage.getItem('activeTab') || 'BindElement']);
   // * 默认选中的二级菜单，有则从 sessionStorage 中取得，没有则为重定向路由对应菜单。
   const [defaultSelectedKeys] = useState([window.sessionStorage.getItem('activeTabItem') || 'InputBind']);

@@ -108,6 +108,7 @@ module.exports = {
     'no-unused-expressions': WARN,
     'no-plusplus': OFF,
     'no-console': OFF,
+    'no-shadow': OFF,
     quotes: [ERROR, 'single'],
     semi: [ERROR, 'always']
   }

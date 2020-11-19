@@ -1,10 +1,10 @@
 import { lazy } from 'react';
+
 // ? useInputBind.
-const InputBind = lazy(() => import(/* webpackChunkName: "useInputBind" */ 'Pages/BindElement/InputBind/index'));
-// // ? useCheckboxBind.
-// const CheckboxBind = lazy(() =>
-//   import(/* webpackChunkName: "useCheckboxBind" */ '@pages/BindElement/CheckboxBind/index.js')
-// );
+const InputBind = lazy(() => import(/* webpackChunkName: "useInputBind" */ 'Pages/BindElement/InputBind'));
+
+// ? useCheckboxBind.
+const CheckboxBind = lazy(() => import(/* webpackChunkName: "useCheckboxBind" */ 'Pages/BindElement/CheckboxBind'));
 // // ? useTextSelection.
 // const TextSelectionBind = lazy(() =>
 //   import(/* webpackChunkName: "useTextSelection" */ '@pages/BindElement/TextSelectionBind/index.js')
@@ -44,11 +44,11 @@ export const routes = [
   {
     path: '/BindElement/InputBind',
     component: InputBind
+  },
+  {
+    path: '/BindElement/CheckboxBind',
+    component: CheckboxBind
   }
-  // {
-  //   path: '/BindElement/CheckboxBind',
-  //   component: CheckboxBind
-  // },
   // {
   //   path: '/BindElement/TextSelectionBind',
   //   component: TextSelectionBind

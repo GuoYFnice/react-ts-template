@@ -14,10 +14,14 @@
     .ant-menu-inline {
       background-color: #282c34 !important;
     }
+    .ant-menu-item-only-child {
+      margin: 0;
+    }
     .ant-menu-item-selected {
       background-color: #db305a !important;
     }
     .ant-menu-item-active:not(.ant-menu-item-selected) {
+      margin-left: 10px;
       transform: scale(1.1);
     }
   }
