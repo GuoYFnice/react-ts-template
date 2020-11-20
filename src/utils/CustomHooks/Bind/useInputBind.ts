@@ -8,8 +8,8 @@ import { useState, ChangeEvent } from 'react';
  * @return { Object }
  */
 const useInputBind = (initialValue: string | number) => {
-  const [value, setValue] = useState(initialValue || '');
-  const onChange = (e: ChangeEvent<HTMLInputElement>): void => {
+  const [value, setValue] = useState<string | number>(initialValue);
+  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
     setValue(e.target.value);
   };
   return { value, onChange };

@@ -1,8 +1,8 @@
 // ? 一级菜单列表。
 export const rootSubmenuKeys = [
-  'BindElement'
+  'BindElement',
   // 'DraggableElement',
-  // 'ResizeObserver',
+  'ResizeObserver'
   // 'ScrollOptions',
   // 'Timer',
   // 'State',
@@ -21,13 +21,13 @@ export const hookSubmenuList = [
       {
         name: 'CheckboxBind',
         path: '/BindElement/CheckboxBind'
+      },
+      {
+        name: 'TextSelectionBind',
+        path: '/BindElement/TextSelectionBind'
       }
-      // {
-      //   name: 'TextSelectionBind',
-      //   path: '/BindElement/TextSelectionBind'
-      // }
     ]
-  }
+  },
   // {
   //   name: 'DraggableElement',
   //   children: [
@@ -37,15 +37,15 @@ export const hookSubmenuList = [
   //     }
   //   ]
   // },
-  // {
-  //   name: 'ResizeObserver',
-  //   children: [
-  //     {
-  //       name: 'WindowResize',
-  //       path: '/ResizeObserver/WindowResize'
-  //     }
-  //   ]
-  // },
+  {
+    name: 'ResizeObserver',
+    children: [
+      {
+        name: 'WindowResize',
+        path: '/ResizeObserver/WindowResize'
+      }
+    ]
+  }
   // {
   //   name: 'ScrollOptions',
   //   children: [

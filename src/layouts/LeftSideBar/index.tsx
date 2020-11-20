@@ -7,15 +7,20 @@ import styles from './index.module.scss';
 const { SubMenu } = Menu;
 
 const LeftSidebar: React.FunctionComponent = (): JSX.Element => {
-  const [expandKeys, setExpandKeys] = useState([window.sessionStorage.getItem('activeTab') || 'BindElement']);
+  const [expandKeys, setExpandKeys] = useState<Array<string>>([
+    window.sessionStorage.getItem('activeTab') || 'BindElement'
+  ]);
   // * 默认选中的二级菜单，有则从 sessionStorage 中取得，没有则为重定向路由对应菜单。
-  const [defaultSelectedKeys] = useState([window.sessionStorage.getItem('activeTabItem') || 'InputBind']);
+  const [defaultSelectedKeys] = useState<Array<string>>([
+    window.sessionStorage.getItem('activeTabItem') || 'InputBind'
+  ]);
   // ? 控制一级展开路由的方法。
-  const handleOpenChange = keys => {
+  const handleOpenChange = (keys: any) => {
     // * 保存展开的一级菜单到 sessionStorage.
     window.sessionStorage.setItem('activeTab', keys.length > 1 ? keys[1] : keys[0]);
     // * 当前点击的一级菜单。
-    const latestOpenKey = keys.find(key => expandKeys.includes(key));
+    const latestOpenKey = keys.find((key: string) => !expandKeys.includes(key));
+    console.info(latestOpenKey);
     if (!rootSubmenuKeys.includes(latestOpenKey)) {
       setExpandKeys(keys);
     } else {
@@ -23,10 +28,9 @@ const LeftSidebar: React.FunctionComponent = (): JSX.Element => {
     }
   };
   // ? 保存点击的二级菜单到 sessionStorage 的方法。
-  const handleSelectItem = item => {
+  const handleSelectItem = (item: any) => {
     window.sessionStorage.setItem('activeTabItem', item.key);
   };
-
   return (
     <Menu
       className={styles.sidebarLeft}
