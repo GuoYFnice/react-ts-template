@@ -2,10 +2,8 @@ import { lazy } from 'react';
 
 // ? useInputBind.
 const InputBind = lazy(() => import(/* webpackChunkName: "useInputBind" */ 'Pages/BindElement/InputBind'));
-
 // ? useCheckboxBind.
 const CheckboxBind = lazy(() => import(/* webpackChunkName: "useCheckboxBind" */ 'Pages/BindElement/CheckboxBind'));
-
 // ? useTextSelection.
 const TextSelectionBind = lazy(() =>
   import(/* webpackChunkName: "useTextSelection" */ 'Pages/BindElement/TextSelectionBind')
@@ -15,7 +13,7 @@ const TextSelectionBind = lazy(() =>
 // const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ '@pages/DraggableElement/index.js'));
 
 // ? useSize.
-const WindowResize = lazy(() => import(/* webpackChunkName: "useSize" */ 'Pages/ResizeObserver/index'));
+const WindowResize = lazy(() => import(/* webpackChunkName: "useSize" */ 'Pages/ResizeObserver'));
 
 // // ? useScroll.
 // const GetEleScrollOptions = lazy(() =>
@@ -27,22 +25,21 @@ const WindowResize = lazy(() => import(/* webpackChunkName: "useSize" */ 'Pages/
 // const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
 // // ? useHistory.
 // const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
-// // ? useDebounce.
-// const DebouncedInputValue = lazy(() =>
-//   import(/* webpackChunkName: "useDebounce" */ '@pages/Debounce/DebouncedInputValue/index.js')
-// );
-// // ? useDebounceFn.
-// const DebouncedFunction = lazy(() =>
-//   import(/* webpackChunkName: "useDebounceFn" */ '@pages/Debounce/DebouncedFunction/index.js')
-// );
-// // ? useThrottle.
-// const ThrottledInputValue = lazy(() =>
-//   import(/* webpackChunkName: "useThrottle" */ '@pages/Throttle/ThrottledInputValue/index.js')
-// );
-// // ? useThrottleFn.
-// const ThrottledFunction = lazy(() =>
-//   import(/* webpackChunkName: "useThrottleFn" */ '@pages/Throttle/ThrottledFunction/index.js')
-// );
+
+// ? useDebounce.
+const DebouncedInputValue = lazy(() =>
+  import(/* webpackChunkName: "useDebounce" */ 'Pages/Debounce/DebouncedInputValue')
+);
+// ? useDebounceFn.
+const DebouncedFunction = lazy(() =>
+  import(/* webpackChunkName: "useDebounceFn" */ 'Pages/Debounce/DebouncedFunction')
+);
+// ? useThrottle.
+const ThrottledInputValue = lazy(() =>
+  import(/* webpackChunkName: "useThrottle" */ 'Pages/Throttle/ThrottledInputValue')
+);
+// ? useThrottleFn.
+const ThrottledFunction = lazy(() => import(/* webpackChunkName: "useThrottleFn" */ 'Pages/Throttle/ThrottleFunction'));
 
 export const routes = [
   {
@@ -64,7 +61,7 @@ export const routes = [
   {
     path: '/ResizeObserver/WindowResize',
     component: WindowResize
-  }
+  },
   // {
   //   path: '/ScrollOptions/GetEleScrollOptions',
   //   component: GetEleScrollOptions
@@ -81,20 +78,20 @@ export const routes = [
   //   path: '/State/TodoHistoryManager',
   //   component: TodoHistoryManager
   // },
-  // {
-  //   path: '/Debounce/DebouncedInputValue',
-  //   component: DebouncedInputValue
-  // },
-  // {
-  //   path: '/Debounce/DebouncedFunction',
-  //   component: DebouncedFunction
-  // },
-  // {
-  //   path: '/Throttle/ThrottledFunction',
-  //   component: ThrottledFunction
-  // },
-  // {
-  //   path: '/Throttle/ThrottledInputValue',
-  //   component: ThrottledInputValue
-  // }
+  {
+    path: '/Debounce/DebouncedInputValue',
+    component: DebouncedInputValue
+  },
+  {
+    path: '/Debounce/DebouncedFunction',
+    component: DebouncedFunction
+  },
+  {
+    path: '/Throttle/ThrottledFunction',
+    component: ThrottledFunction
+  },
+  {
+    path: '/Throttle/ThrottledInputValue',
+    component: ThrottledInputValue
+  }
 ];

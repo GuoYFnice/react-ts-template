@@ -1,7 +1,7 @@
 import { MutableRefObject } from 'react';
 
 export type BasicTarget<T = HTMLElement> = (() => T | null) | T | null | MutableRefObject<T | null | undefined>;
-type TargetElement = HTMLElement | Element | Document | Window;
+export type TargetElement = HTMLElement | Element | Document | Window;
 
 /**
  * ? 接收 dom 或者 ref 返回可操作的 DOM 对象。

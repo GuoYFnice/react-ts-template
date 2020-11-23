@@ -2,12 +2,12 @@
 export const rootSubmenuKeys = [
   'BindElement',
   // 'DraggableElement',
-  'ResizeObserver'
+  'ResizeObserver',
   // 'ScrollOptions',
   // 'Timer',
   // 'State',
-  // 'Debounce',
-  // 'Throttle'
+  'Debounce',
+  'Throttle'
 ];
 // ? 子级菜单列表。
 export const hookSubmenuList = [
@@ -45,7 +45,7 @@ export const hookSubmenuList = [
         path: '/ResizeObserver/WindowResize'
       }
     ]
-  }
+  },
   // {
   //   name: 'ScrollOptions',
   //   children: [
@@ -77,30 +77,30 @@ export const hookSubmenuList = [
   //     }
   //   ]
   // },
-  // {
-  //   name: 'Debounce',
-  //   children: [
-  //     {
-  //       name: 'DebouncedInputValue',
-  //       path: '/Debounce/DebouncedInputValue'
-  //     },
-  //     {
-  //       name: 'DebouncedFunction',
-  //       path: '/Debounce/DebouncedFunction'
-  //     }
-  //   ]
-  // },
-  // {
-  //   name: 'Throttle',
-  //   children: [
-  //     {
-  //       name: 'ThrottledInputValue',
-  //       path: '/Throttle/ThrottledInputValue'
-  //     },
-  //     {
-  //       name: 'ThrottledFunction',
-  //       path: '/Throttle/ThrottledFunction'
-  //     }
-  //   ]
-  // }
+  {
+    name: 'Debounce',
+    children: [
+      {
+        name: 'DebouncedInputValue',
+        path: '/Debounce/DebouncedInputValue'
+      },
+      {
+        name: 'DebouncedFunction',
+        path: '/Debounce/DebouncedFunction'
+      }
+    ]
+  },
+  {
+    name: 'Throttle',
+    children: [
+      {
+        name: 'ThrottledInputValue',
+        path: '/Throttle/ThrottledInputValue'
+      },
+      {
+        name: 'ThrottledFunction',
+        path: '/Throttle/ThrottledFunction'
+      }
+    ]
+  }
 ];

@@ -1,5 +1,5 @@
 import { useState, useLayoutEffect } from 'react';
-import { getTargetElement, BasicTarget } from 'Utils/Tools/getTargetElement';
+import { getTargetElement, BasicTarget, TargetElement } from 'Utils/Tools/getTargetElement';
 
 export type Size = { width?: number; height?: number };
 
@@ -10,7 +10,7 @@ export type Size = { width?: number; height?: number };
  */
 export const useSize = (target: BasicTarget): Size => {
   const [state, setState] = useState<Size>(() => {
-    const el = getTargetElement(target);
+    const el: TargetElement | undefined | null = getTargetElement(target);
     return {
       width: ((el || {}) as HTMLElement).clientWidth,
       height: ((el || {}) as HTMLElement).clientHeight
@@ -18,7 +18,7 @@ export const useSize = (target: BasicTarget): Size => {
   });
   // * useLayoutEffect 常用于读取 DOM 布局同步触发重渲染。
   useLayoutEffect(() => {
-    const el = getTargetElement(target);
+    const el: TargetElement | undefined | null = getTargetElement(target);
     if (!el) {
       // eslint-disable-next-line @typescript-eslint/no-empty-function
       return () => {};
