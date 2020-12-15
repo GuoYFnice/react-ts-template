@@ -1,14 +1,17 @@
 import { useState, useLayoutEffect } from 'react';
 import { getTargetElement, BasicTarget, TargetElement } from 'Utils/Tools/getTargetElement';
 
-export type Size = { width?: number; height?: number };
+export type Size = {
+  width?: number;
+  height?: number;
+};
 
 /**
  * ? 监听节动态返回元素宽高。
  * @param { HTMLElement | React.ref } target DOM 节点或者 Refs.
  * @return { Object }
  */
-export const useSize = (target: BasicTarget): Size => {
+const useSize = (target: BasicTarget): Size => {
   const [state, setState] = useState<Size>(() => {
     const el: TargetElement | undefined | null = getTargetElement(target);
     return {
@@ -40,3 +43,5 @@ export const useSize = (target: BasicTarget): Size => {
   }, [target]);
   return state;
 };
+
+export default useSize;

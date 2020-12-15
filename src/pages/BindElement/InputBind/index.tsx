@@ -1,9 +1,9 @@
 import React from 'react';
-import useInputBind from 'Utils/CustomHooks/Bind/useInputBind';
+import useInputBind, { Result } from 'Utils/CustomHooks/Bind/useInputBind';
 import { Input } from 'antd';
 
-const InputBind: React.FunctionComponent = (): JSX.Element => {
-  const inputProps = useInputBind('Binding input with custom-hook useInputBind');
+const InputBind: React.FC = (): JSX.Element => {
+  const inputProps: Result = useInputBind('Binding input with custom-hook useInputBind');
   return (
     <div>
       <h1>Binding input.</h1>

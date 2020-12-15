@@ -1,9 +1,10 @@
 import { useRef } from 'react';
+import { AList } from 'Src/typings/replaceAny';
 
 // ? 判断传入依赖变化的对象是否改变。
-const depsAreSame = (oldDeps: any[], deps: any[]): boolean => {
+const depsAreSame = <T>(oldDeps: T[], deps: T[]): boolean => {
   if (oldDeps === deps) return true;
-  Object.values(oldDeps).forEach((item, index) => {
+  Object.values(oldDeps).forEach((item: T, index: number) => {
     if (item !== deps[index]) {
       return false;
     }
@@ -19,7 +20,7 @@ const depsAreSame = (oldDeps: any[], deps: any[]): boolean => {
  * @param { Function } factory 用来创建所需对象的函数。
  * @param { Array } deps 传入依赖变化的对象。
  */
-const useCreation = <T>(factory: () => T, deps: any[]) => {
+const useCreation = <T>(factory: () => T, deps: AList) => {
   const { current } = useRef({
     deps,
     obj: undefined as undefined | T,

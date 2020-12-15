@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
+import { DAndTOptions } from 'Src/typings/DAndTOptions';
 import useThrottleFn from './useThrottleFn';
-import { ThrottleOptions } from './throttleOptions';
 
 /**
  * ? 处理节流"值"的 hook.
@@ -8,7 +8,7 @@ import { ThrottleOptions } from './throttleOptions';
  * @param { Object } options 节流配置。
  * @return { Object }
  */
-const useThrottle = <T>(value: T, options?: ThrottleOptions) => {
+const useThrottle = <T>(value: T, options?: DAndTOptions): T => {
   const [throttled, setThrottled] = useState<T>(value);
   const { run } = useThrottleFn(() => {
     setThrottled(value);

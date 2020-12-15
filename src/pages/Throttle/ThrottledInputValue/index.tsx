@@ -1,14 +1,19 @@
-import React, { useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
 import useThrottle from 'Utils/CustomHooks/Debounce&Throttle/useThrottle';
 import { Input } from 'antd';
 
-const ThrottledInputValue = () => {
+const ThrottledInputValue: React.FC = (): JSX.Element => {
   const [value, setValue] = useState<number | string>();
-  const throttledValue = useThrottle(value, { wait: 2000 });
+  const throttledValue: ReturnType<typeof useThrottle> = useThrottle(value, { wait: 2000 });
   return (
     <div>
       <h1>Throttled input value:</h1>
-      <Input type='text' placeholder='Typed value' value={value} onChange={e => setValue(e.target.value)} />
+      <Input
+        type='text'
+        placeholder='Typed value'
+        value={value}
+        onChange={(e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+      />
       <p>The input value changes every 2 seconds: {throttledValue}</p>
     </div>
   );

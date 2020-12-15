@@ -1,7 +1,7 @@
 import React from 'react';
-import { Size, useSize } from 'Utils/CustomHooks/Observer/useSize';
+import useSize, { Size } from 'Utils/CustomHooks/Observer/useSize';
 
-const ResizeObserver: React.FunctionComponent = (): JSX.Element => {
+const ResizeObserver: React.FC = (): JSX.Element => {
   const dom: HTMLElement | null = document.querySelector('body');
   const size: Size = useSize(dom);
   return (

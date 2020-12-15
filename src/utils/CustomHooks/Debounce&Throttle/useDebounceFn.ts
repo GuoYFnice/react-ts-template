@@ -1,23 +1,24 @@
-import debounce from 'lodash.debounce';
 import { useRef } from 'react';
+import debounce from 'lodash.debounce';
 import useCreation from 'Utils/CustomHooks/toolHooks/useCreation';
-import { DebounceOptions } from './debounceOptions';
+import { DAndTOptions } from 'Src/typings/DAndTOptions';
+import { Arbitrary, AList } from 'Src/typings/replaceAny';
 
-type Fn = (...args: any) => any;
+type Fn = (...args: Arbitrary) => Arbitrary;
 
 /**
  * ? 处理防抖函数的 hook.
  * @param { Function } fn 需要防抖执行的函数。
  * @param { Object } options 防抖配置。
  */
-const useDebounceFn = <T extends Fn>(fn: T, options?: DebounceOptions) => {
+const useDebounceFn = <T extends Fn>(fn: T, options?: DAndTOptions) => {
   const fnRef = useRef<T>(fn);
   fnRef.current = fn;
   const wait = options?.wait ?? 1000;
   const debounced = useCreation(
     () =>
       debounce<T>(
-        ((...args: any[]) => {
+        ((...args: AList) => {
           return fnRef.current(...args);
         }) as T,
         wait,

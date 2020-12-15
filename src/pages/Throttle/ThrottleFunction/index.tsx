@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import useThrottleFn from 'Utils/CustomHooks/Debounce&Throttle/useThrottleFn';
 import { Button } from 'antd';
 
-const ThrottledFunction: React.FunctionComponent = (): JSX.Element => {
+const ThrottledFunction: React.FC = (): JSX.Element => {
   const [value, setValue] = useState<number>(0);
   const { run } = useThrottleFn(
     () => {

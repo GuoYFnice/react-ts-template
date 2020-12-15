@@ -1,23 +1,24 @@
-import throttle from 'lodash.throttle';
 import { useRef } from 'react';
+import throttle from 'lodash.throttle';
 import useCreation from 'Utils/CustomHooks/toolHooks/useCreation';
-import { ThrottleOptions } from './throttleOptions';
+import { DAndTOptions } from 'Src/typings/DAndTOptions';
+import { Arbitrary, AList } from 'Src/typings/replaceAny';
 
-type Fn = (...args: any) => any;
+type Fn = (...args: Arbitrary) => Arbitrary;
 
 /**
  * ? 用于处理节流函数的 hook.
  * @param { Function } fn 需要节流执行的函数。
  * @return { Object }
  */
-const useThrottleFn = <T extends Fn>(fn: T, options?: ThrottleOptions) => {
+const useThrottleFn = <T extends Fn>(fn: T, options?: DAndTOptions) => {
   const fnRef = useRef<T>(fn);
   fnRef.current = fn;
   const wait = options?.wait ?? 1000;
   const throttled = useCreation(
     () =>
       throttle<T>(
-        ((...args: any[]) => {
+        ((...args: AList) => {
           return fnRef.current(...args);
         }) as T,
         wait,

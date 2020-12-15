@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import useDebounceFn from 'Utils/CustomHooks/Debounce&Throttle/useDebounceFn';
-import { DebounceOptions } from './debounceOptions';
+import { DAndTOptions } from 'Src/typings/DAndTOptions';
 
 /**
  * ? 处理防抖"值"的 hook.
@@ -8,8 +8,8 @@ import { DebounceOptions } from './debounceOptions';
  * @param { Object } options 防抖配置。
  * @return { Object }
  */
-const useDebounce = <T>(value: T, options?: DebounceOptions) => {
-  const [debounced, setDebounced] = useState(value);
+const useDebounce = <T>(value: T, options?: DAndTOptions): T => {
+  const [debounced, setDebounced] = useState<T>(value);
   const { run } = useDebounceFn(() => {
     setDebounced(value);
   }, options);

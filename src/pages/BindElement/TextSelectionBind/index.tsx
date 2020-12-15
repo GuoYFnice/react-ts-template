@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import useTextSelection from 'Utils/CustomHooks/Bind/useTextSelection';
+import useTextSelection, { IState } from 'Utils/CustomHooks/Bind/useTextSelection';
 
-const TextSelectionBind: React.FunctionComponent = (): JSX.Element => {
-  const { text, top, left, bottom, right, height, width } = useTextSelection();
+const TextSelectionBind: React.FC = (): JSX.Element => {
+  const { text, top, left, bottom, right, height, width }: IState = useTextSelection();
   const [popVisible, setPopVisible] = useState<boolean>(false);
   useEffect(() => {
     if (text.trim() === '') {
@@ -16,7 +16,6 @@ const TextSelectionBind: React.FunctionComponent = (): JSX.Element => {
       <h1>Binding user selection.</h1>
       <p>You can select text over all page.</p>
       <p>
-        selection: <br />
         text: {text} <br />
         width: {width} <br />
         height: {height} <br />
