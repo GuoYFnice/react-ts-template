@@ -8,24 +8,8 @@ const CheckboxBind = lazy(() => import(/* webpackChunkName: "useCheckboxBind" */
 const TextSelectionBind = lazy(() =>
   import(/* webpackChunkName: "useTextSelection" */ 'Pages/BindElement/TextSelectionBind')
 );
-
-// // ? useDrag & useDrop.
-// const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ '@pages/DraggableElement/index.js'));
-
 // ? useSize.
 const WindowResize = lazy(() => import(/* webpackChunkName: "useSize" */ 'Pages/ResizeObserver'));
-
-// // ? useScroll.
-// const GetEleScrollOptions = lazy(() =>
-//   import(/* webpackChunkName: "useScroll" */ '@pages/ScrollOptions/GetEleScrollOptions/index.js')
-// );
-// // ? useVirtualList.
-// const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */'@pages/ScrollOptions/VirtualList/index.js'));
-// // ? useInterval.
-// const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
-// // ? useHistory.
-// const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
-
 // ? useDebounce.
 const DebouncedInputValue = lazy(() =>
   import(/* webpackChunkName: "useDebounce" */ 'Pages/Debounce/DebouncedInputValue')
@@ -40,6 +24,19 @@ const ThrottledInputValue = lazy(() =>
 );
 // ? useThrottleFn.
 const ThrottledFunction = lazy(() => import(/* webpackChunkName: "useThrottleFn" */ 'Pages/Throttle/ThrottleFunction'));
+// ? useScroll.
+const GetEleScrollOptions = lazy(() =>
+  import(/* webpackChunkName: "useScroll" */ 'Pages/ScrollOptions/GetEleScrollOptions')
+);
+
+// // ? useDrag & useDrop.
+// const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ '@pages/DraggableElement/index.js'));
+// // ? useVirtualList.
+// const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */'@pages/ScrollOptions/VirtualList/index.js'));
+// // ? useInterval.
+// const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
+// // ? useHistory.
+// const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
 
 export const routes = [
   {
@@ -62,10 +59,10 @@ export const routes = [
     path: '/ResizeObserver/WindowResize',
     component: WindowResize
   },
-  // {
-  //   path: '/ScrollOptions/GetEleScrollOptions',
-  //   component: GetEleScrollOptions
-  // },
+  {
+    path: '/ScrollOptions/GetEleScrollOptions',
+    component: GetEleScrollOptions
+  },
   // {
   //   path: '/ScrollOptions/VirtualList',
   //   component: VirtualList

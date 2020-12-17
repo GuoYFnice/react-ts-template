@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { AList } from 'Src/typings/replaceAny';
+import { AList } from 'Src/types/replaceAny';
 
 // ? 判断传入依赖变化的对象是否改变。
 const depsAreSame = <T>(oldDeps: T[], deps: T[]): boolean => {

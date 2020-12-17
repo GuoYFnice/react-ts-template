@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { DAndTOptions } from 'Src/typings/DAndTOptions';
+import { DAndTOptions } from 'Src/types/DAndTOptions';
 import useThrottleFn from './useThrottleFn';
 
 /**

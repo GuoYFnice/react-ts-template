@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import useDebounceFn from 'Utils/CustomHooks/Debounce&Throttle/useDebounceFn';
-import { DAndTOptions } from 'Src/typings/DAndTOptions';
+import { DAndTOptions } from 'Src/types/DAndTOptions';
 
 /**
  * ? 处理防抖"值"的 hook.

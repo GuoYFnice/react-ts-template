@@ -3,7 +3,7 @@ export const rootSubmenuKeys = [
   'BindElement',
   // 'DraggableElement',
   'ResizeObserver',
-  // 'ScrollOptions',
+  'ScrollOptions',
   // 'Timer',
   // 'State',
   'Debounce',
@@ -46,19 +46,19 @@ export const hookSubmenuList = [
       }
     ]
   },
-  // {
-  //   name: 'ScrollOptions',
-  //   children: [
-  //     {
-  //       name: 'GetEleScrollOptions',
-  //       path: '/ScrollOptions/GetEleScrollOptions'
-  //     },
-  //     {
-  //       name: 'VirtualList',
-  //       path: '/ScrollOptions/VirtualList'
-  //     }
-  //   ]
-  // },
+  {
+    name: 'ScrollOptions',
+    children: [
+      {
+        name: 'GetEleScrollOptions',
+        path: '/ScrollOptions/GetEleScrollOptions'
+      }
+      // {
+      //   name: 'VirtualList',
+      //   path: '/ScrollOptions/VirtualList'
+      // }
+    ]
+  },
   // {
   //   name: 'Timer',
   //   children: [

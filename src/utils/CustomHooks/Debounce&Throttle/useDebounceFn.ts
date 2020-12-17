@@ -1,8 +1,8 @@
 import { useRef } from 'react';
 import debounce from 'lodash.debounce';
 import useCreation from 'Utils/CustomHooks/toolHooks/useCreation';
-import { DAndTOptions } from 'Src/typings/DAndTOptions';
-import { Arbitrary, AList } from 'Src/typings/replaceAny';
+import { DAndTOptions } from 'Src/types/DAndTOptions';
+import { Arbitrary, AList } from 'Src/types/replaceAny';
 
 type Fn = (...args: Arbitrary) => Arbitrary;
 
