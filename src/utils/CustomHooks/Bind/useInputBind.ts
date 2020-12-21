@@ -1,8 +1,8 @@
-import { useState, ChangeEvent } from 'react';
+import { useState } from 'react';
 
 export interface Result {
   value: string | number;
-  onChange: (arg: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (arg: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 /**
@@ -14,8 +14,8 @@ export interface Result {
  */
 const useInputBind = (initialValue: string | number): Result => {
   const [value, setValue] = useState<string | number>(initialValue);
-  const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setValue(e.target.value);
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue(event.target.value);
   };
   return { value, onChange };
 };

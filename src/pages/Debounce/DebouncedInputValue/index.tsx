@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from 'react';
+import React, { useState } from 'react';
 import useDebounce from 'Utils/CustomHooks/Debounce&Throttle/useDebounce';
 import { Input } from 'antd';
 
@@ -12,7 +12,7 @@ const DebouncedInputValue: React.FC = (): JSX.Element => {
         type='text'
         placeholder='Typed value'
         value={value}
-        onChange={(e: ChangeEvent<HTMLInputElement>) => setValue(e.target.value)}
+        onChange={(event: React.ChangeEvent<HTMLInputElement>) => setValue(event.target.value)}
       />
       <p style={{ marginTop: 16 }}>Display the input value after 2 seconds: {debouncedValue}</p>
     </div>

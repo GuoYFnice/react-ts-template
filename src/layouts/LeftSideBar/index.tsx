@@ -20,7 +20,6 @@ const LeftSidebar: React.FunctionComponent = (): JSX.Element => {
     window.sessionStorage.setItem('activeTab', keys.length > 1 ? keys[1] : keys[0]);
     // * 当前点击的一级菜单。
     const latestOpenKey = keys.find((key: string) => !expandKeys.includes(key));
-    console.info(latestOpenKey);
     if (!rootSubmenuKeys.includes(latestOpenKey)) {
       setExpandKeys(keys);
     } else {
