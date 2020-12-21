@@ -1,0 +1,21 @@
+.mainWrapper {
+  .functionalWrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
+  }
+  .listWrapper {
+    width: 40vw;
+    height: 400px;
+    overflow-y: scroll;
+    .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 50px;
+      margin-bottom: 10px;
+      border: 1px solid #db305a;
+    }
+  }
+}

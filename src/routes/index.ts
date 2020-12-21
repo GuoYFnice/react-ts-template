@@ -28,11 +28,11 @@ const ThrottledFunction = lazy(() => import(/* webpackChunkName: "useThrottleFn"
 const GetEleScrollOptions = lazy(() =>
   import(/* webpackChunkName: "useScroll" */ 'Pages/ScrollOptions/GetEleScrollOptions')
 );
+// ? useVirtualList.
+const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */ 'Pages/ScrollOptions/VirtualList'));
 
 // // ? useDrag & useDrop.
 // const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ '@pages/DraggableElement/index.js'));
-// // ? useVirtualList.
-// const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */'@pages/ScrollOptions/VirtualList/index.js'));
 // // ? useInterval.
 // const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
 // // ? useHistory.
@@ -63,10 +63,10 @@ export const routes = [
     path: '/ScrollOptions/GetEleScrollOptions',
     component: GetEleScrollOptions
   },
-  // {
-  //   path: '/ScrollOptions/VirtualList',
-  //   component: VirtualList
-  // },
+  {
+    path: '/ScrollOptions/VirtualList',
+    component: VirtualList
+  },
   // {
   //   path: '/Timer/Interval',
   //   component: Interval

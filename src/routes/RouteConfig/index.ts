@@ -52,11 +52,11 @@ export const hookSubmenuList = [
       {
         name: 'GetEleScrollOptions',
         path: '/ScrollOptions/GetEleScrollOptions'
+      },
+      {
+        name: 'VirtualList',
+        path: '/ScrollOptions/VirtualList'
       }
-      // {
-      //   name: 'VirtualList',
-      //   path: '/ScrollOptions/VirtualList'
-      // }
     ]
   },
   // {
