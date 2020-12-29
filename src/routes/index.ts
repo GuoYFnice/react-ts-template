@@ -18,8 +18,8 @@ const GetEleScrollOptions = lazy(() =>
 );
 // ? useVirtualList.
 const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */ 'Pages/ScrollOptions/VirtualList'));
-// // ? useInterval.
-// const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
+// ? useInterval.
+const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ 'Pages/Timer'));
 // // ? useHistory.
 // const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
 // ? useDebounce.
@@ -66,10 +66,10 @@ export const routes = [
     path: '/ScrollOptions/VirtualList',
     component: VirtualList
   },
-  // {
-  //   path: '/Timer/Interval',
-  //   component: Interval
-  // },
+  {
+    path: '/Timer/Interval',
+    component: Interval
+  },
   // {
   //   path: '/State/TodoHistoryManager',
   //   component: TodoHistoryManager
@@ -83,11 +83,11 @@ export const routes = [
     component: DebouncedFunction
   },
   {
-    path: '/Throttle/ThrottledFunction',
-    component: ThrottledFunction
-  },
-  {
     path: '/Throttle/ThrottledInputValue',
     component: ThrottledInputValue
+  },
+  {
+    path: '/Throttle/ThrottledFunction',
+    component: ThrottledFunction
   }
 ];

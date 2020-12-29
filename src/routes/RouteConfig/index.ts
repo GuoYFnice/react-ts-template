@@ -4,7 +4,7 @@ export const rootSubmenuKeys = [
   'DraggableElement',
   'ResizeObserver',
   'ScrollOptions',
-  // 'Timer',
+  'Timer',
   // 'State',
   'Debounce',
   'Throttle'
@@ -59,15 +59,15 @@ export const hookSubmenuList = [
       }
     ]
   },
-  // {
-  //   name: 'Timer',
-  //   children: [
-  //     {
-  //       name: 'Interval',
-  //       path: '/Timer/Interval'
-  //     }
-  //   ]
-  // },
+  {
+    name: 'Timer',
+    children: [
+      {
+        name: 'Interval',
+        path: '/Timer/Interval'
+      }
+    ]
+  },
   // {
   //   name: 'State',
   //   children: [
