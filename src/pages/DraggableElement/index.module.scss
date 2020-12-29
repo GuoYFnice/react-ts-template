@@ -1,0 +1,25 @@
+.dragDropArea {
+  .dropWrapper {
+    position: relative;
+    padding: 10px;
+    text-align: center;
+    border: 1px dashed #e8e8e8;
+    .displayArea {
+      display: flex;
+    }
+  }
+  .dragWrapper {
+    display: flex;
+    margin-top: 10px;
+  }
+  .draggableItem {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid #e8e8e8;
+    &:not(:last-child) {
+      margin-right: 10px;
+    }
+  }
+}

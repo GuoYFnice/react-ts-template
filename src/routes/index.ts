@@ -8,8 +8,20 @@ const CheckboxBind = lazy(() => import(/* webpackChunkName: "useCheckboxBind" */
 const TextSelectionBind = lazy(() =>
   import(/* webpackChunkName: "useTextSelection" */ 'Pages/BindElement/TextSelectionBind')
 );
+// ? useDrag & useDrop.
+const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ 'Pages/DraggableElement'));
 // ? useSize.
 const WindowResize = lazy(() => import(/* webpackChunkName: "useSize" */ 'Pages/ResizeObserver'));
+// ? useScroll.
+const GetEleScrollOptions = lazy(() =>
+  import(/* webpackChunkName: "useScroll" */ 'Pages/ScrollOptions/GetEleScrollOptions')
+);
+// ? useVirtualList.
+const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */ 'Pages/ScrollOptions/VirtualList'));
+// // ? useInterval.
+// const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
+// // ? useHistory.
+// const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
 // ? useDebounce.
 const DebouncedInputValue = lazy(() =>
   import(/* webpackChunkName: "useDebounce" */ 'Pages/Debounce/DebouncedInputValue')
@@ -24,19 +36,6 @@ const ThrottledInputValue = lazy(() =>
 );
 // ? useThrottleFn.
 const ThrottledFunction = lazy(() => import(/* webpackChunkName: "useThrottleFn" */ 'Pages/Throttle/ThrottleFunction'));
-// ? useScroll.
-const GetEleScrollOptions = lazy(() =>
-  import(/* webpackChunkName: "useScroll" */ 'Pages/ScrollOptions/GetEleScrollOptions')
-);
-// ? useVirtualList.
-const VirtualList = lazy(() => import(/* webpackChunkName: useVirtualList */ 'Pages/ScrollOptions/VirtualList'));
-
-// // ? useDrag & useDrop.
-// const DragDrop = lazy(() => import(/* webpackChunkName: "useDragDrop" */ '@pages/DraggableElement/index.js'));
-// // ? useInterval.
-// const Interval = lazy(() => import(/* webpackChunkName: "useInterval" */ '@pages/Timer/index.js'));
-// // ? useHistory.
-// const TodoHistoryManager = lazy(() => import(/* webpackChunkName: "useHistory" */ '@pages/State/index.js'));
 
 export const routes = [
   {
@@ -51,10 +50,10 @@ export const routes = [
     path: '/BindElement/TextSelectionBind',
     component: TextSelectionBind
   },
-  // {
-  //   path: '/DraggableElement/DragDrop',
-  //   component: DragDrop
-  // },
+  {
+    path: '/DraggableElement/DragDrop',
+    component: DragDrop
+  },
   {
     path: '/ResizeObserver/WindowResize',
     component: WindowResize

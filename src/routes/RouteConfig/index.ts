@@ -1,7 +1,7 @@
 // ? 一级菜单列表。
 export const rootSubmenuKeys = [
   'BindElement',
-  // 'DraggableElement',
+  'DraggableElement',
   'ResizeObserver',
   'ScrollOptions',
   // 'Timer',
@@ -28,15 +28,15 @@ export const hookSubmenuList = [
       }
     ]
   },
-  // {
-  //   name: 'DraggableElement',
-  //   children: [
-  //     {
-  //       name: 'DragDrop',
-  //       path: '/DraggableElement/DragDrop'
-  //     }
-  //   ]
-  // },
+  {
+    name: 'DraggableElement',
+    children: [
+      {
+        name: 'DragDrop',
+        path: '/DraggableElement/DragDrop'
+      }
+    ]
+  },
   {
     name: 'ResizeObserver',
     children: [
