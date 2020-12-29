@@ -69,9 +69,11 @@ const DraggableElement = () => {
         ))}
       </div>
       <p>2. TEXT: Use 'ctrl' + 'c' to clone text, 'ctrl' + 'v' in the box.</p>
-      <p>3. URL: Use 'ctrl' + 'c' to clone text, 'ctrl' + 'v' in the box.</p>
+      <p>
+        3. URI: Drag the <a href='https://www.baidu.com'>baidu</a> in the box.
+      </p>
       <p>4. FILE: Frop file into the box.</p>
-      All of the operations can see information in console.
+      All of the operations' information can be seen in console.
     </div>
   );
 };
