@@ -5,7 +5,7 @@ export const rootSubmenuKeys = [
   'ResizeObserver',
   'ScrollOptions',
   'Timer',
-  // 'State',
+  'State',
   'Debounce',
   'Throttle'
 ];
@@ -68,15 +68,15 @@ export const hookSubmenuList = [
       }
     ]
   },
-  // {
-  //   name: 'State',
-  //   children: [
-  //     {
-  //       name: 'TodoHistoryManager',
-  //       path: '/State/TodoHistoryManager'
-  //     }
-  //   ]
-  // },
+  {
+    name: 'State',
+    children: [
+      {
+        name: 'TodoHistoryManager',
+        path: '/State/TodoHistoryManager'
+      }
+    ]
+  },
   {
     name: 'Debounce',
     children: [

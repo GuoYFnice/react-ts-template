@@ -1,0 +1,14 @@
+.todoWrapper {
+  h1 {
+    margin-bottom: 5px;
+  }
+  :global(.ant-card-head) {
+    background-color: #ececec;
+  }
+  :global(.ant-timeline-item:last-child) {
+    padding-bottom: 0;
+    :global(.ant-timeline-item-tail) {
+      display: none;
+    }
+  }
+}

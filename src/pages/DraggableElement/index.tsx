@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import useDrag from 'Utils/CustomHooks/Draggable/useDrag';
 import useDrop, { DropAreaOptions } from 'Utils/CustomHooks/Draggable/useDrop';
+import { nanoid } from 'nanoid';
 import { Button, message } from 'antd';
 import styles from './index.module.scss';
 
@@ -52,7 +53,7 @@ const DraggableElement = () => {
       <div className={styles.dropWrapper} {...props}>
         <div className={styles.displayArea}>
           {dropList.map(item => (
-            <div className={styles.draggableItem} key={item}>
+            <div className={styles.draggableItem} key={nanoid()}>
               {item}
             </div>
           ))}
