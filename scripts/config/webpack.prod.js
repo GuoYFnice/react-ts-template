@@ -19,8 +19,7 @@ module.exports = merge(common, {
     }),
     new webpack.BannerPlugin({
       raw: true,
-      banner:
-        '/** @preserve Powered by react-ts-quick-starter (https://github.com/vortesnail/react-ts-quick-starter) */'
+      banner: '/** @preserve Powered by react-ts-template (https://github.com/MYWProgram/react-ts-template) */'
     }),
     shouldOpenAnalyzer &&
       new BundleAnalyzerPlugin({
